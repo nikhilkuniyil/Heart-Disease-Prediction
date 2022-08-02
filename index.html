@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Heart Disease Prediction Model</title>
+  <meta http-equiv="refresh" content="25" >
+</head>
+<body>
+	<h1>Predict Heart Disease</h1>
+	<form method="post",action="/predict">
+    <input class="form-input" type="number" name="age" placeholder="Age(years)"><br>
+    <input class="form-input" type="number" name="sex" placeholder="Sex (1=male, 0=female)"><br>
+    <input class="form-input" type="number" name="chestpain" placeholder="Chest Pain Type (1-4)"><br>
+    <input class="form-input" type="number" name="bloodpressure" placeholder="Blood Pressure(mmHg)"><br>
+    <input class="form-input" type="number" name="cholesterol" placeholder="Cholesterol Level(mg/dl)"><br>
+    <input class="form-input" type="number" name="bloodsugar" placeholder="Blood Sugar > 120? (1 = true, 0 = false)"><br>
+    <input class="form-input" type="number" name="ekg" placeholder="EKG Results(0-2)"><br>
+    <input class="form-input" type="number" name="heartrate" placeholder="Maximum Heart Rate(bpm)"><br>
+  	<input class="form-input" type="number" name="angina" placeholder="Exercise Induced Angina(1 = True, 0 = False)"><br>
+  	<input class="form-input" type=“float” name="stdepression" placeholder="ST depression induced by exercise relative to rest"><br>
+  	<input class="form-input" type="number" name="slope" placeholder="Slope of the Peak Exercise ST Segment"><br>
+  	<input class="form-input" type="number" name="vessels" placeholder="# of Vessels Colored by Flouroscopy"><br>
+  	<input class="form-input" type="number" name="thal" placeholder="thal: 0 = normal; 1 = fixed defect; 2 = reversable defect"><br>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+
+  {% if prediction_text %}
+        {{prediction_text}}
+  {% endif %}
+
+
+</body>
+</html>
